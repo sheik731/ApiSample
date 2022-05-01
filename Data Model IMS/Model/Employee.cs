@@ -1,6 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using System;
 
 namespace sample.Model
 {
@@ -9,9 +10,9 @@ namespace sample.Model
         [Key]
         public int EmployeeId{get; set;}
 
-        /*[ForeignKey("Project")]
+        [ForeignKey("Project")]
         public int ProjectId {get; set;}
-        public Project Project {get; set;}*/
+        public Project Project {get; set;}
 
         [Required]
         public string EmployeeAceNumber {get; set;}
@@ -27,8 +28,8 @@ namespace sample.Model
         public int RoleId {get; set;}
         public Role Role {get; set;}
 
-        /*public String EmailId {get; set;}
-        public String Password {get; set;}*/
+        public String EmailId {get; set;}
+        public String Password {get; set;}
 
 
         [Required]

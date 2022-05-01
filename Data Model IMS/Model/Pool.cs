@@ -18,5 +18,7 @@ namespace sample.Model
         public int DeptId {get; set;}
         public Dept Dept {get; set;}
 
+        public virtual ICollection<PoolMembers>? PoolMembers {get; set;}
+
     }
 }

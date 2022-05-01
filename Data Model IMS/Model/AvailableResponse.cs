@@ -11,11 +11,11 @@ namespace sample.Model
 
         [ForeignKey("Drive")]
         public int DriveId {get; set;}
-        public Drive Drive {get; set;}
+        /*public Drive Drive {get; set;}*/
 
         [ForeignKey("Employee")]
         public int EmployeeId {get; set;}
-        public Employee Employee {get; set;}
+        // public Employee Employee {get; set;}
 
         public int Date {get; set;}
         public int FromDate {get; set;}
@@ -33,6 +33,9 @@ namespace sample.Model
 
         [Required]
         public string Comments {get; set;}
+
+        public virtual ICollection<Employee>? Employees {get; set;}
+        public virtual ICollection<Drive>? Drives {get; set;}
 
     }
 }

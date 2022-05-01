@@ -14,5 +14,7 @@ namespace sample.Model
         [Required]
         public bool IsActive { get; set;} = true;
 
+        public virtual ICollection<Project>? Projects {get; set;}
+
     }
 }

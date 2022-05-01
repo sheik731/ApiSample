@@ -1,6 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using System;
 
 namespace sample.Model
 {
@@ -22,7 +23,7 @@ namespace sample.Model
 
         [ForeignKey("Location")]
         public int LocationId {get; set;}
-        public Location Location {get; set;}
+        // public Location Location {get; set;}
 
         [Required]
         public bool IsScheduled { get; set;} = true;
@@ -31,11 +32,21 @@ namespace sample.Model
 
         [Required]
         public bool IsDriveCancelled {get; set;} = true;
+        
+        [ForeignKey("Employee")]
+        public int EmployeeId {get; set;}
+        // public virtual ICollection<Employee>? Employees {get; set;}
 
         public int AddedBy {get; set;}
         public int AddedOn {get; set;}
+
+        [ForeignKey("Employee")]
+        // public int EmployeeId {get; set;}
+        // public virtual ICollection<Employee>? Employees {get; set;}
+
         public int UpdatedBy {get; set;}
         public int UpdatedOn {get; set;}
+
         public int SlotTiming {get; set;}
         
     }
