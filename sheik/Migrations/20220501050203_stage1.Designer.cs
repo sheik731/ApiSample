@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using sample.Data;
 
 namespace sheik.Migrations
 {
     [DbContext(typeof(Datacontext))]
-    partial class DatacontextModelSnapshot : ModelSnapshot
+    [Migration("20220501050203_stage1")]
+    partial class stage1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -83,6 +85,31 @@ namespace sheik.Migrations
                     b.ToTable("Pool");
                 });
 
+            modelBuilder.Entity("sample.Model.Project", b =>
+                {
+                    b.Property<int>("ProjectId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<int>("DeptId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("ProjectName")
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("nvarchar(25)");
+
+                    b.HasKey("ProjectId");
+
+                    b.HasIndex("DeptId");
+
+                    b.ToTable("Project");
+                });
+
             modelBuilder.Entity("sample.Model.Role", b =>
                 {
                     b.Property<int>("RoleId")
@@ -104,6 +131,17 @@ namespace sheik.Migrations
                 });
 
             modelBuilder.Entity("sample.Model.Pool", b =>
+                {
+                    b.HasOne("sample.Model.Dept", "Dept")
+                        .WithMany()
+                        .HasForeignKey("DeptId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Dept");
+                });
+
+            modelBuilder.Entity("sample.Model.Project", b =>
                 {
                     b.HasOne("sample.Model.Dept", "Dept")
                         .WithMany()

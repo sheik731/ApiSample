@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using sample.Data;
 
 namespace sheik.Migrations
 {
     [DbContext(typeof(Datacontext))]
-    partial class DatacontextModelSnapshot : ModelSnapshot
+    [Migration("20220501044453_pool")]
+    partial class pool
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -38,26 +40,6 @@ namespace sheik.Migrations
                     b.ToTable("Dept");
                 });
 
-            modelBuilder.Entity("sample.Model.Location", b =>
-                {
-                    b.Property<int>("LocationId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("LocationName")
-                        .IsRequired()
-                        .HasMaxLength(25)
-                        .HasColumnType("nvarchar(25)");
-
-                    b.HasKey("LocationId");
-
-                    b.ToTable("Location");
-                });
-
             modelBuilder.Entity("sample.Model.Pool", b =>
                 {
                     b.Property<int>("PoolId")
@@ -83,27 +65,43 @@ namespace sheik.Migrations
                     b.ToTable("Pool");
                 });
 
-            modelBuilder.Entity("sample.Model.Role", b =>
+            modelBuilder.Entity("sample.Model.Project", b =>
                 {
-                    b.Property<int>("RoleId")
+                    b.Property<int>("ProjectId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
+                    b.Property<int>("DeptId")
+                        .HasColumnType("int");
+
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
-                    b.Property<string>("RoleName")
+                    b.Property<string>("ProjectName")
                         .IsRequired()
                         .HasMaxLength(25)
                         .HasColumnType("nvarchar(25)");
 
-                    b.HasKey("RoleId");
+                    b.HasKey("ProjectId");
 
-                    b.ToTable("Role");
+                    b.HasIndex("DeptId");
+
+                    b.ToTable("Project");
                 });
 
             modelBuilder.Entity("sample.Model.Pool", b =>
+                {
+                    b.HasOne("sample.Model.Dept", "Dept")
+                        .WithMany()
+                        .HasForeignKey("DeptId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Dept");
+                });
+
+            modelBuilder.Entity("sample.Model.Project", b =>
                 {
                     b.HasOne("sample.Model.Dept", "Dept")
                         .WithMany()
