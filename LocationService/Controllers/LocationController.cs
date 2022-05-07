@@ -17,7 +17,7 @@ private ILocationService _LocationService;
 public LocationController(ILogger<LocationController> logger)
 {
     _Logger = logger;
-    _LocationService = DataFactory.locationDataFactory.GetLocationServiceObject(_Logger)
+    _LocationService = DataFactory.locationDataFactory.GetLocationServiceObject(_Logger);
 }
  [HttpPost]
     public IActionResult CreateNewLocation(string locationName)
