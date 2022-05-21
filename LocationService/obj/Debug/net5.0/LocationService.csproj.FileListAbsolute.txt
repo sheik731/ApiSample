@@ -1,7 +1,0 @@
-E:\Location Service\LocationService\obj\Debug\net5.0\LocationService.csproj.AssemblyReference.cache
-E:\Location Service\LocationService\obj\Debug\net5.0\LocationService.GeneratedMSBuildEditorConfig.editorconfig
-E:\Location Service\LocationService\obj\Debug\net5.0\LocationService.AssemblyInfoInputs.cache
-E:\Location Service\LocationService\obj\Debug\net5.0\LocationService.AssemblyInfo.cs
-E:\Location Service\LocationService\obj\Debug\net5.0\LocationService.csproj.CoreCompileInputs.cache
-E:\Location Service\LocationService\obj\Debug\net5.0\LocationService.MvcApplicationPartsAssemblyInfo.cs
-E:\Location Service\LocationService\obj\Debug\net5.0\LocationService.MvcApplicationPartsAssemblyInfo.cache

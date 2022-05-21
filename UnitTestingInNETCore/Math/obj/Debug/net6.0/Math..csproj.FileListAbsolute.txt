@@ -1,0 +1,12 @@
+E:\UnitTestingInNETCore\Math\bin\Debug\net6.0\Math..deps.json
+E:\UnitTestingInNETCore\Math\bin\Debug\net6.0\Math..dll
+E:\UnitTestingInNETCore\Math\bin\Debug\net6.0\Math..pdb
+E:\UnitTestingInNETCore\Math\obj\Debug\net6.0\Math..csproj.AssemblyReference.cache
+E:\UnitTestingInNETCore\Math\obj\Debug\net6.0\Math..GeneratedMSBuildEditorConfig.editorconfig
+E:\UnitTestingInNETCore\Math\obj\Debug\net6.0\Math..AssemblyInfoInputs.cache
+E:\UnitTestingInNETCore\Math\obj\Debug\net6.0\Math..AssemblyInfo.cs
+E:\UnitTestingInNETCore\Math\obj\Debug\net6.0\Math..csproj.CoreCompileInputs.cache
+E:\UnitTestingInNETCore\Math\obj\Debug\net6.0\Math..dll
+E:\UnitTestingInNETCore\Math\obj\Debug\net6.0\refint\Math..dll
+E:\UnitTestingInNETCore\Math\obj\Debug\net6.0\Math..pdb
+E:\UnitTestingInNETCore\Math\obj\Debug\net6.0\ref\Math..dll
